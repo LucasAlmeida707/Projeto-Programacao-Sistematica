@@ -6,9 +6,17 @@
 #define EXT2 extern
 #endif
 
+#include <stdio.h>
+#include <stdlib.h>
+
 struct produto
     {
-
+    char espaco_em_uso;
+    int projeto;
+    char nome[15];
+    int codigo;
+    int versao;
+    char lider;
     };
 
 typedef struct produto Produto;

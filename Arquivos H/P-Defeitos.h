@@ -6,9 +6,18 @@
 #define EXT3 extern
 #endif
 
+#include <stdio.h>
+#include <stdlib.h>
+
 struct defeito
     {
-
+    char espaco_em_uso;
+    int codigo;
+    char descricao[30];
+    char estado[11];
+    int votos;
+    char data_abertura[11];
+    char data_fechamento[11];
     };
 
 typedef struct defeito Defeito;

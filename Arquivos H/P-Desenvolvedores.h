@@ -6,9 +6,16 @@
 #define EXT1 extern
 #endif
 
+#include <stdio.h>
+#include <stdlib.h>
+
 struct desenvolvedor
     {
-
+    char espaco_em_uso;
+    char nome[15];
+    char senha[5];
+    char email[20];
+    char lider_projeto;
     };
 
 typedef struct desenvolvedor Desenvolvedor;

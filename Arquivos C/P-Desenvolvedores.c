@@ -21,11 +21,11 @@ int cadastrar_desenvolvedor(Desenvolvedor *desenvolvedor)
         if (espaco_em_uso==0) //Se o caracter lido for 0 (zero), significa que o espaço não está sendo utilizado e seu conteúdo será sobreescrito;
             {
             //Funções para a escrita no arquivo;
-            fputs(desenvolvedor.espaco_em_uso, arquivo);
-            fputs(desenvolvedor.nome, arquivo);
-            fputs(desenvolvedor.email, arquivo);
-            fputs(desenvolvedor.senha, arquivo);
-            fputs(desenvolvedor.lider_projeto, arquivo);
+            fputs(desenvolvedor->espaco_em_uso, arquivo);
+            fputs(desenvolvedor->nome, arquivo);
+            fputs(desenvolvedor->email, arquivo);
+            fputs(desenvolvedor->senha, arquivo);
+            fputs(desenvolvedor->lider_projeto, arquivo);
             fclose(arquivo);
             return SUCESSO;
             }
@@ -36,11 +36,11 @@ int cadastrar_desenvolvedor(Desenvolvedor *desenvolvedor)
         }
     if (feof(arquivo)) //Se chegou ao fim do arquivo sem encontrar espaços vazios, escreve um novo bloco;
         {
-        fputs(desenvolvedor.espaco_em_uso, arquivo);
-        fputs(desenvolvedor.nome, arquivo);
-        fputs(desenvolvedor.email, arquivo);
-        fputs(desenvolvedor.senha, arquivo);
-        fputs(desenvolvedor.lider_projeto, arquivo);
+        fputs(desenvolvedor->espaco_em_uso, arquivo);
+        fputs(desenvolvedor->nome, arquivo);
+        fputs(desenvolvedor->email, arquivo);
+        fputs(desenvolvedor->senha, arquivo);
+        fputs(desenvolvedor->lider_projeto, arquivo);
         }
     fclose(arquivo);
     return SUCESSO;
@@ -98,15 +98,15 @@ int editar_desenvolvedor(Desenvolvedor *desenvolvedor)
     while (!feof(arquivo))
         {
         fgets(email_comparacao, 20, arquivo);
-        if(!strcmp(email, email_comparacao)) //Se a comparação entre as duas strings for positiva (retorno 0) o condicional será iniciado;
+        if(!strcmp(desenvolvedor->email, email_comparacao)) //Se a comparação entre as duas strings for positiva (retorno 0) o condicional será iniciado;
             {
             rewind(arquivo);
             fseek(arquivo, i*sizeof(Desenvolvedor), SEEK_CUR);
-            fputs(desenvolvedor.espaco_em_uso, arquivo);
-            fputs(desenvolvedor.nome, arquivo);
-            fputs(desenvolvedor.email, arquivo);
-            fputs(desenvolvedor.senha, arquivo);
-            fputs(desenvolvedor.lider_projeto, arquivo);
+            fputs(desenvolvedor->espaco_em_uso, arquivo);
+            fputs(desenvolvedor->nome, arquivo);
+            fputs(desenvolvedor->email, arquivo);
+            fputs(desenvolvedor->senha, arquivo);
+            fputs(desenvolvedor->lider_projeto, arquivo);
             }
         else //Se a comparação entre as duas strings for negativa, avança-se para o próximo registro e incrementa-se o supracitado multiplicador;
             {
@@ -137,15 +137,15 @@ int pesquisar_desenvolvedor(Desenvolvedor *desenvolvedor)
     while (!feof(arquivo))
         {
         fgets(email_comparacao, 20, arquivo);
-        if(!strcmp(email, email_comparacao)) //Se a comparação entre as duas strings for positiva (retorno 0) o condicional será iniciado;
+        if(!strcmp(desenvolvedor->email, email_comparacao)) //Se a comparação entre as duas strings for positiva (retorno 0) o condicional será iniciado;
             {
             rewind(arquivo);
             fseek(arquivo, i*sizeof(Desenvolvedor), SEEK_CUR);
-            fgets(desenvolvedor.espaco_em_uso, 1, arquivo);
-            fgets(desenvolvedor.nome, 15, arquivo);
-            fgets(desenvolvedor.senha, 5, arquivo);
-            fgets(desenvolvedor.email, 20, arquivo);
-            fgets(desenvolvedor.lider_projeto, 1, arquivo);
+            fgets(desenvolvedor->espaco_em_uso, 1, arquivo);
+            fgets(desenvolvedor->nome, 15, arquivo);
+            fgets(desenvolvedor->senha, 5, arquivo);
+            fgets(desenvolvedor->email, 20, arquivo);
+            fgets(desenvolvedor->lider_projeto, 1, arquivo);
             fclose(arquivo);
             return SUCESSO;
             }

@@ -1,4 +1,4 @@
-#define P-DEFEITOS_SERVIDOR
+#define P_DEFEITOS_SERVIDOR
 #include "P-Defeitos.h"
 #include "Codigos.h"
 

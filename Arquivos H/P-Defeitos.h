@@ -1,6 +1,6 @@
-#ifndef P-DEFEITOS_H
-#define P-DEFEITOS_H
-#ifdef P-DEFEITOS_SERVIDOR
+#ifndef P_DEFEITOS_H
+#define P_DEFEITOS_H
+#ifdef P_DEFEITOS_SERVIDOR
 #define EXT3
 #else
 #define EXT3 extern
@@ -27,4 +27,4 @@ int remover_defeito(int);
 int editar_defeito(Defeito*);
 int pesquisar_defeito(Defeito*);
 
-#endif // P-DEFEITOS_H
+#endif // P_DEFEITOS_H

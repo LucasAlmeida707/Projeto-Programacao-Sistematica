@@ -1,6 +1,6 @@
-#ifndef P-PRODUTOS_H
-#define P-PRODUTOS_H
-#ifdef P-PRODUTOS_SERVIDOR
+#ifndef P_PRODUTOS_H
+#define P_PRODUTOS_H
+#ifdef P_PRODUTOS_SERVIDOR
 #define EXT2
 #else
 #define EXT2 extern
@@ -26,4 +26,4 @@ int remover_produto(int);
 int editar_produto(Produto*);
 int pesquisar_produto(Produto*);
 
-#endif // P-PRODUTOS_H
+#endif // P_PRODUTOS_H

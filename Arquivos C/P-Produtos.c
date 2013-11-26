@@ -3,7 +3,7 @@
 #include "Codigos.h"
 
 /**/
-int cadastrar_produto(Produto *produto);
+int cadastrar_produto(Produto *produto)
     {
     FILE *arquivo;
     char espaco_em_uso;
@@ -49,7 +49,7 @@ int cadastrar_produto(Produto *produto);
     }
 
 /**/
-int remover_produto(int codigo);
+int remover_produto(int codigo)
     {
     FILE *arquivo;
     int codigo_comparacao;
@@ -83,7 +83,7 @@ int remover_produto(int codigo);
     }
 
 /**/
-int editar_produto(Produto *produto);
+int editar_produto(Produto *produto)
     {
     FILE *arquivo;
     int codigo_comparacao;
@@ -123,7 +123,7 @@ int editar_produto(Produto *produto);
 
 
 /**/
-int pesquisar_produto(Produto *produto);
+int pesquisar_produto(Produto *produto)
     {
     FILE *arquivo;
     int codigo_comparacao;

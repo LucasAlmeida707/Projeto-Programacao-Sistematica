@@ -3,7 +3,7 @@
 #include "Codigos.h"
 
 /**/
-int cadastrar_desenvolvedor(Desenvolvedor *desenvolvedor);
+int cadastrar_desenvolvedor(Desenvolvedor *desenvolvedor)
     {
     FILE *arquivo;
     char espaco_em_uso;
@@ -47,7 +47,7 @@ int cadastrar_desenvolvedor(Desenvolvedor *desenvolvedor);
     }
 
 /**/
-int remover_desenvolvedor(char* email);
+int remover_desenvolvedor(char* email)
     {
     FILE *arquivo;
     char email_comparacao[20];
@@ -81,7 +81,7 @@ int remover_desenvolvedor(char* email);
     }
 
 /**/
-int editar_desenvolvedor(Desenvolvedor *desenvolvedor);
+int editar_desenvolvedor(Desenvolvedor *desenvolvedor)
     {
     FILE *arquivo;
     char email_comparacao[20];
@@ -120,7 +120,7 @@ int editar_desenvolvedor(Desenvolvedor *desenvolvedor);
 
 
 /**/
-int pesquisar_desenvolvedor(Desenvolvedor *desenvolvedor);
+int pesquisar_desenvolvedor(Desenvolvedor *desenvolvedor)
     {
     FILE *arquivo;
     char email_comparacao[20];

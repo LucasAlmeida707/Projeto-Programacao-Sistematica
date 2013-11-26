@@ -3,7 +3,7 @@
 #include "Codigos.h"
 
 /**/
-int cadastrar_defeito(Defeito *defeito);
+int cadastrar_defeito(Defeito *defeito)
     {
     FILE *arquivo;
     char espaco_em_uso;
@@ -51,7 +51,7 @@ int cadastrar_defeito(Defeito *defeito);
     }
 
 /**/
-int remover_defeito(int codigo);
+int remover_defeito(int codigo)
     {
     FILE *arquivo;
     int codigo_comparacao;
@@ -85,7 +85,7 @@ int remover_defeito(int codigo);
     }
 
 /**/
-int editar_defeito(Defeito *defeito);
+int editar_defeito(Defeito *defeito)
     {
     FILE *arquivo;
     int codigo_comparacao;
@@ -126,7 +126,7 @@ int editar_defeito(Defeito *defeito);
 
 
 /**/
-int pesquisar_defeito(Defeito *defeito);
+int pesquisar_defeito(Defeito *defeito)
     {
     FILE *arquivo;
     int codigo_comparacao;

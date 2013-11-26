@@ -21,13 +21,13 @@ int cadastrar_defeito(Defeito *defeito)
         if (espaco_em_uso==0) //Se o caracter lido for 0 (zero), significa que o espaço não está sendo utilizado e seu conteúdo será sobreescrito;
             {
             //Funções para a escrita no arquivo;
-            fputs(defeito.espaco_em_uso, arquivo);
-            fprintf(arquivo, "%i", defeito.codigo);
-            fputs(defeito.descricao, arquivo);
-            fputs(defeito.estado, arquivo);
-            fprintf(arquivo, "%i", defeito.votos);
-            fputs(defeito.data_abertura, arquivo);
-            fputs(defeito.data_fechamento, arquivo);
+            fputs(defeito->espaco_em_uso, arquivo);
+            fprintf(arquivo, "%i", defeito->codigo);
+            fputs(defeito->descricao, arquivo);
+            fputs(defeito->estado, arquivo);
+            fprintf(arquivo, "%i", defeito->votos);
+            fputs(defeito->data_abertura, arquivo);
+            fputs(defeito->data_fechamento, arquivo);
             fclose(arquivo);
             return SUCESSO;
             }
@@ -38,13 +38,13 @@ int cadastrar_defeito(Defeito *defeito)
         }
     if (feof(arquivo)) //Se chegou ao fim do arquivo sem encontrar espaços vazios, escreve um novo bloco;
         {
-        fputs(defeito.espaco_em_uso, arquivo);
-        fprintf(arquivo, "%i", defeito.codigo);
-        fputs(defeito.descricao, arquivo);
-        fputs(defeito.estado, arquivo);
-        fprintf(arquivo, "%i", defeito.votos);
-        fputs(defeito.data_abertura, arquivo);
-        fputs(defeito.data_fechamento, arquivo);
+        fputs(defeito->espaco_em_uso, arquivo);
+        fprintf(arquivo, "%i", defeito->codigo);
+        fputs(defeito->descricao, arquivo);
+        fputs(defeito->estado, arquivo);
+        fprintf(arquivo, "%i", defeito->votos);
+        fputs(defeito->data_abertura, arquivo);
+        fputs(defeito->data_fechamento, arquivo);
         }
     fclose(arquivo);
     return SUCESSO;
@@ -106,13 +106,13 @@ int editar_defeito(Defeito *defeito)
             {
             rewind(arquivo);
             fseek(arquivo, i*sizeof(Defeito), SEEK_CUR);
-            fputs(defeito.espaco_em_uso, arquivo);
-            fprintf(arquivo, "%i", defeito.codigo);
-            fputs(defeito.descricao, arquivo);
-            fputs(defeito.estado, arquivo);
-            fprintf(arquivo, "%i", defeito.votos);
-            fputs(defeito.data_abertura, arquivo);
-            fputs(defeito.data_fechamento, arquivo);
+            fputs(defeito->espaco_em_uso, arquivo);
+            fprintf(arquivo, "%i", defeito->codigo);
+            fputs(defeito->descricao, arquivo);
+            fputs(defeito->estado, arquivo);
+            fprintf(arquivo, "%i", defeito->votos);
+            fputs(defeito->data_abertura, arquivo);
+            fputs(defeito->data_fechamento, arquivo);
             }
         else //Se a comparação entre os dois códigos for negativa, avança-se para o próximo registro e incrementa-se o supracitado multiplicador;
             {
@@ -147,13 +147,13 @@ int pesquisar_defeito(Defeito *defeito)
             {
             rewind(arquivo);
             fseek(arquivo, i*sizeof(Defeito), SEEK_CUR);
-            fgets(defeito.espaco_em_uso, 1, arquivo);
-            fscanf(arquivo, "%i", defeito.codigo);
-            fgets(defeito.descricao, 30, arquivo);
-            fgets(defeito.estado, 11,arquivo);
-            fscanf(arquivo, "%i", defeito.votos);
-            fgets(defeito.data_abertura, 11, arquivo);
-            fgets(defeito.data_fechamento, 11, arquivo);
+            fgets(defeito->espaco_em_uso, 1, arquivo);
+            fscanf(arquivo, "%i", defeito->codigo);
+            fgets(defeito->descricao, 30, arquivo);
+            fgets(defeito->estado, 11,arquivo);
+            fscanf(arquivo, "%i", defeito->votos);
+            fgets(defeito->data_abertura, 11, arquivo);
+            fgets(defeito->data_fechamento, 11, arquivo);
             }
         else //Se a comparação entre os dois códigos for negativa, avança-se para o próximo registro e incrementa-se o supracitado multiplicador;
             {

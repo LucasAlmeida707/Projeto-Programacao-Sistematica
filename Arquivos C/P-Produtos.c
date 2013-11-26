@@ -21,12 +21,12 @@ int cadastrar_produto(Produto *produto)
         if (espaco_em_uso==0) //Se o caracter lido for 0 (zero), significa que o espaço não está sendo utilizado e seu conteúdo será sobreescrito;
             {
             //Funções para a escrita no arquivo;
-            fputs(produto.espaco_em_uso, arquivo);
-            fprintf(arquivo, "%i", produto.projeto);
-            fputs(produto.nome, arquivo);
-            fputs(produto.codigo, arquivo);
-            fprintf(arquivo, "%i", produto.versao);
-            fputs(produto.lider, arquivo);
+            fputs(produto->espaco_em_uso, arquivo);
+            fprintf(arquivo, "%i", produto->projeto);
+            fputs(produto->nome, arquivo);
+            fputs(produto->codigo, arquivo);
+            fprintf(arquivo, "%i", produto->versao);
+            fputs(produto->lider, arquivo);
             fclose(arquivo);
             return SUCESSO;
             }
@@ -37,12 +37,12 @@ int cadastrar_produto(Produto *produto)
         }
     if (feof(arquivo)) //Se chegou ao fim do arquivo sem encontrar espaços vazios, escreve um novo bloco;
         {
-        fputs(produto.espaco_em_uso, arquivo);
-        fprintf(arquivo, "%i", produto.projeto);
-        fputs(produto.nome, arquivo);
-        fprintf(arquivo, "%i", produto.codigo);
-        fprintf(arquivo, "%i", produto.versao);
-        fputs(produto.lider, arquivo);
+        fputs(produto->espaco_em_uso, arquivo);
+        fprintf(arquivo, "%i", produto->projeto);
+        fputs(produto->nome, arquivo);
+        fputs(produto->codigo, arquivo);
+        fprintf(arquivo, "%i", produto->versao);
+        fputs(produto->lider, arquivo);
         }
     fclose(arquivo);
     return SUCESSO;
@@ -104,12 +104,12 @@ int editar_produto(Produto *produto)
             {
             rewind(arquivo);
             fseek(arquivo, i*sizeof(Produto), SEEK_CUR);
-            fputs(produto.espaco_em_uso, arquivo);
-            fprintf(arquivo, "%i", produto.projeto);
-            fputs(produto.nome, arquivo);
-            fprintf(arquivo, "%i", produto.codigo);
-            fprintf(arquivo, "%i", produto.versao);
-            fputs(produto.lider, arquivo);
+            fputs(produto->espaco_em_uso, arquivo);
+            fprintf(arquivo, "%i", produto->projeto);
+            fputs(produto->nome, arquivo);
+            fputs(produto->codigo, arquivo);
+            fprintf(arquivo, "%i", produto->versao);
+            fputs(produto->lider, arquivo);
             }
         else //Se a comparação entre os dois códigos for negativa, avança-se para o próximo registro e incrementa-se o supracitado multiplicador;
             {
@@ -144,12 +144,12 @@ int pesquisar_produto(Produto *produto)
             {
             rewind(arquivo);
             fseek(arquivo, i*sizeof(Produto), SEEK_CUR);
-            fgets(produto.espaco_em_uso, 1, arquivo);
-            fscanf(arquivo, "%i", produto.projeto);
-            fgets(produto.nome, 15, arquivo);
-            fscanf(arquivo, "%i", produto.codigo);
-            fscanf(arquivo, "%i", produto.versao);
-            fgets(produto.lider, 1, arquivo);
+            fgets(produto->espaco_em_uso, 1, arquivo);
+            fscanf(arquivo, "%i", produto->projeto);
+            fgets(produto->nome, 15, arquivo);
+            fscanf(arquivo, "%i", produto->codigo);
+            fscanf(arquivo, "%i", produto->versao);
+            fgets(produto->lider, 1, arquivo);
             }
         else //Se a comparação entre os dois códigos for negativa, avança-se para o próximo registro e incrementa-se o supracitado multiplicador;
             {

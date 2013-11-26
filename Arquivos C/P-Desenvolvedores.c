@@ -11,6 +11,7 @@ int cadastrar_desenvolvedor(Desenvolvedor *desenvolvedor);
     arquivo=fopen("Desenvolvedores.txt", "r+"); //Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
     if (arquivo==NULL) //Testa a abertura do arquivo;
         {
+        fclose(arquivo);
         return ERRO_BD;
         }
 
@@ -25,6 +26,7 @@ int cadastrar_desenvolvedor(Desenvolvedor *desenvolvedor);
             fputs(desenvolvedor.email, arquivo);
             fputs(desenvolvedor.senha, arquivo);
             fputs(desenvolvedor.lider_projeto, arquivo);
+            fclose(arquivo);
             return SUCESSO;
             }
         else //Se o caracter lido for 1 (um), significa que o espaço está sendo utilizado; Passa-se para o próximo bloco;
@@ -54,6 +56,7 @@ int remover_desenvolvedor(char* email);
     arquivo=fopen("Desenvolvedores.txt", "r+"); //Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
     if (arquivo==NULL) //Testa a abertura do arquivo;
         {
+        fclose(arquivo);
         return ERRO_BD;
         }
 
@@ -87,6 +90,7 @@ int editar_desenvolvedor(Desenvolvedor *desenvolvedor);
     arquivo=fopen("Desenvolvedores.txt", "r+"); //Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
     if (arquivo==NULL) //Testa a abertura do arquivo;
         {
+        fclose(arquivo);
         return ERRO_BD;
         }
 
@@ -125,6 +129,7 @@ int pesquisar_desenvolvedor(Desenvolvedor *desenvolvedor);
     arquivo=fopen("Desenvolvedores.txt", "r+"); //Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
     if (arquivo==NULL) //Testa a abertura do arquivo;
         {
+        fclose(arquivo);
         return ERRO_BD;
         }
 
@@ -141,6 +146,7 @@ int pesquisar_desenvolvedor(Desenvolvedor *desenvolvedor);
             fgets(desenvolvedor.senha, 5, arquivo);
             fgets(desenvolvedor.email, 20, arquivo);
             fgets(desenvolvedor.lider_projeto, 1, arquivo);
+            fclose(arquivo);
             return SUCESSO;
             }
         else //Se a comparação entre as duas strings for negativa, avança-se para o próximo registro e incrementa-se o supracitado multiplicador;

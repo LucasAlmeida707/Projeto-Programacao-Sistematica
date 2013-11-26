@@ -11,6 +11,7 @@ int cadastrar_produto(Produto *produto);
     arquivo=fopen("Produtos.txt", "r+"); //Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
     if (arquivo==NULL) //Testa a abertura do arquivo;
         {
+        fclose(arquivo);
         return ERRO_BD;
         }
 
@@ -26,6 +27,7 @@ int cadastrar_produto(Produto *produto);
             fputs(produto.codigo, arquivo);
             fprintf(arquivo, "%i", produto.versao);
             fputs(produto.lider, arquivo);
+            fclose(arquivo);
             return SUCESSO;
             }
         else //Se o caracter lido for 1 (um), significa que o espaço está sendo utilizado; Passa-se para o próximo bloco;
@@ -41,7 +43,6 @@ int cadastrar_produto(Produto *produto);
         fprintf(arquivo, "%i", produto.codigo);
         fprintf(arquivo, "%i", produto.versao);
         fputs(produto.lider, arquivo);
-        return SUCESSO;
         }
     fclose(arquivo);
     return SUCESSO;
@@ -57,6 +58,7 @@ int remover_produto(int codigo);
     arquivo=fopen("Produtos.txt", "r+"); //Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
     if (arquivo==NULL) //Testa a abertura do arquivo;
         {
+        fclose(arquivo);
         return ERRO_BD;
         }
 
@@ -90,6 +92,7 @@ int editar_produto(Produto *produto);
     arquivo=fopen("Produtos.txt", "r+"); //Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
     if (arquivo==NULL) //Testa a abertura do arquivo;
         {
+        fclose(arquivo);
         return ERRO_BD;
         }
 
@@ -129,6 +132,7 @@ int pesquisar_produto(Produto *produto);
     arquivo=fopen("Produtos.txt", "r+"); //Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
     if (arquivo==NULL) //Testa a abertura do arquivo;
         {
+        fclose(arquivo);
         return ERRO_BD;
         }
 

@@ -11,6 +11,7 @@ int cadastrar_defeito(Defeito *defeito);
     arquivo=fopen("Defeitos.txt", "r+"); //Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
     if (arquivo==NULL) //Testa a abertura do arquivo;
         {
+        fclose(arquivo);
         return ERRO_BD;
         }
 
@@ -27,6 +28,7 @@ int cadastrar_defeito(Defeito *defeito);
             fprintf(arquivo, "%i", defeito.votos);
             fputs(defeito.data_abertura, arquivo);
             fputs(defeito.data_fechamento, arquivo);
+            fclose(arquivo);
             return SUCESSO;
             }
         else //Se o caracter lido for 1 (um), significa que o espaço está sendo utilizado; Passa-se para o próximo bloco;
@@ -43,7 +45,6 @@ int cadastrar_defeito(Defeito *defeito);
         fprintf(arquivo, "%i", defeito.votos);
         fputs(defeito.data_abertura, arquivo);
         fputs(defeito.data_fechamento, arquivo);
-        return SUCESSO;
         }
     fclose(arquivo);
     return SUCESSO;
@@ -59,6 +60,7 @@ int remover_defeito(int codigo);
     arquivo=fopen("Defeitos.txt", "r+"); //Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
     if (arquivo==NULL) //Testa a abertura do arquivo;
         {
+        fclose(arquivo);
         return ERRO_BD;
         }
 
@@ -92,6 +94,7 @@ int editar_defeito(Defeito *defeito);
     arquivo=fopen("Defeitos.txt", "r+"); //Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
     if (arquivo==NULL) //Testa a abertura do arquivo;
         {
+        fclose(arquivo);
         return ERRO_BD;
         }
 
@@ -132,6 +135,7 @@ int pesquisar_defeito(Defeito *defeito);
     arquivo=fopen("Defeitos.txt", "r+"); //Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
     if (arquivo==NULL) //Testa a abertura do arquivo;
         {
+        fclose(arquivo);
         return ERRO_BD;
         }
 

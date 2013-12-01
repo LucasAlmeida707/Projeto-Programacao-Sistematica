@@ -1,0 +1,4 @@
+Pasta contendo os seguintes artefatos:
+
+- Módulos 1, 2 e 3 - Documentação relativa aos módulos 1, 2 e 3;
+- Módulos 4 e 5 - Documentação relativa aos módulos 4 e 5;

@@ -1,0 +1,4 @@
+Pasta contendo os seguintes artefatos:
+
+- Interfaces dos módulos 1, 2 e 3 - Documentação relativa às interfaces dos módulos 1, 2 e 3;
+- Interfaces dos módulos 4 e 5 - Documentação relativa às interfaces dos módulos 4 e 5;

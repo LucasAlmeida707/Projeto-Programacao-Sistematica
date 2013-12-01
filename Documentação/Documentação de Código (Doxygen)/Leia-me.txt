@@ -1,0 +1,4 @@
+Pasta contendo os seguintes artefatos:
+
+- Arquivos C - Documentação relativa aos módulos;
+- Arquivos H - Documentação relativa às interfaces;

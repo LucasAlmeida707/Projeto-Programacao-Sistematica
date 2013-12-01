@@ -11,12 +11,12 @@
 
 struct produto
     {
-    char espaco_em_uso;
+    char espaco_em_uso[2];
     int projeto;
     char nome[16];
     char codigo[5];
     char versao[6];
-    char lider;
+    char lider[2];
     };
 
 typedef struct produto Produto;

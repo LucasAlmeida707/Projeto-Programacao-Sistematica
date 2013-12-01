@@ -113,7 +113,7 @@ int remover_desenvolvedor(char* email)
     }
 
 /**
-Função editar os dados de um desenvolvedor previamente cadastrado. Recebe como parâmetro o endereço de uma struct previamente declarada (em P-Desenvolvedores.h)
+Função responsável por editar os dados de um desenvolvedor previamente cadastrado. Recebe como parâmetro o endereço de uma struct previamente declarada (em P-Desenvolvedores.h)
 contendo os dados a serem modificados e retorna o resultado da operação (Resultados definidos em Codigos.h).
 */
 

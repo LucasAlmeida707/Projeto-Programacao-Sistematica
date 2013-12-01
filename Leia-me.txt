@@ -3,3 +3,4 @@ Pasta contendo os seguintes artefatos:
 - Arquivos C - Códigos fonte dos módulos (arquivos .c);
 - Arquivos H - Códigos fonte das interfaces (arquivos .h);
 - Documentação - Documentação relacionada ao sistema;
+- Testes - Questão 4 (Trabalho prático);

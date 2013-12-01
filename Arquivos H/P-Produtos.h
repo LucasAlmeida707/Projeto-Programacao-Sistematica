@@ -13,9 +13,9 @@ struct produto
     {
     char espaco_em_uso;
     int projeto;
-    char nome[15];
-    int codigo;
-    int versao;
+    char nome[16];
+    char codigo[5];
+    char versao[6];
     char lider;
     };
 

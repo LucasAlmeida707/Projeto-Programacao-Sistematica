@@ -8,13 +8,14 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 struct desenvolvedor
     {
     char espaco_em_uso;
-    char nome[15];
-    char senha[5];
-    char email[20];
+    char nome[16];
+    char senha[6];
+    char email[21];
     char lider_projeto;
     };
 

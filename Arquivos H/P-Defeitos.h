@@ -12,9 +12,9 @@
 struct defeito
     {
     char espaco_em_uso;
-    int codigo;
-    char descricao[30];
-    char estado[11];
+    char codigo[5];
+    char descricao[31];
+    char estado[12];
     int votos;
     char data_abertura[11];
     char data_fechamento[11];

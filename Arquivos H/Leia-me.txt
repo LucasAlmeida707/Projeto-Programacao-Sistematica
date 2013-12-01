@@ -1,0 +1,1 @@
+Pasta contendo os arquivos de interface entre os módulos e "defines" para os códigos (.h).

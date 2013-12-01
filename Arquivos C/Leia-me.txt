@@ -1,0 +1,1 @@
+Pasta contendo os códigos fonte (.c) dos módulos codificados.

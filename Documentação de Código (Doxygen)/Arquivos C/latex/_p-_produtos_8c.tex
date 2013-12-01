@@ -1,0 +1,101 @@
+\hypertarget{_p-_produtos_8c}{\section{ReferÃªncia do Arquivo Projeto-\/\-Programacao-\/\-Sistematica.git/trunk/\-Arquivos C/\-P-\/\-Produtos.c}
+\label{_p-_produtos_8c}\index{Projeto-\/\-Programacao-\/\-Sistematica.\-git/trunk/\-Arquivos C/\-P-\/\-Produtos.\-c@{Projeto-\/\-Programacao-\/\-Sistematica.\-git/trunk/\-Arquivos C/\-P-\/\-Produtos.\-c}}
+}
+{\ttfamily \#include \char`\"{}P-\/\-Produtos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Codigos.\-h\char`\"{}}\\*
+\subsection*{DefiniÃ§Ãµes e Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_p-_produtos_8c_ae881db89edad384f7597a33bf89787e3}{P\-\_\-\-P\-R\-O\-D\-U\-T\-O\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R}
+\end{DoxyCompactItemize}
+\subsection*{FunÃ§Ãµes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_p-_produtos_8c_a8d4c684ef725bb1171edbcee9609493f}{cadastrar\-\_\-produto} (Produto $\ast$produto)
+\item 
+int \hyperlink{_p-_produtos_8c_aadfe1b600cdbbdc5dd5ba9d4cd5a3b3f}{remover\-\_\-produto} (int codigo)
+\item 
+int \hyperlink{_p-_produtos_8c_a4b51286e8a211d5b7a7d7428ba015e9c}{editar\-\_\-produto} (Produto $\ast$produto)
+\item 
+int \hyperlink{_p-_produtos_8c_a6105ae879fa0ab8aa3d91902d0647466}{pesquisar\-\_\-produto} (Produto $\ast$produto)
+\end{DoxyCompactItemize}
+
+
+\subsection{DefiniÃ§Ãµes e macros}
+\hypertarget{_p-_produtos_8c_ae881db89edad384f7597a33bf89787e3}{\index{P-\/\-Produtos.\-c@{P-\/\-Produtos.\-c}!P\-\_\-\-P\-R\-O\-D\-U\-T\-O\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R@{P\-\_\-\-P\-R\-O\-D\-U\-T\-O\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R}}
+\index{P\-\_\-\-P\-R\-O\-D\-U\-T\-O\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R@{P\-\_\-\-P\-R\-O\-D\-U\-T\-O\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R}!P-Produtos.c@{P-\/\-Produtos.\-c}}
+\subsubsection[{P\-\_\-\-P\-R\-O\-D\-U\-T\-O\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-\_\-\-P\-R\-O\-D\-U\-T\-O\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R}}\label{_p-_produtos_8c_ae881db89edad384f7597a33bf89787e3}
+
+
+\subsection{FunÃ§Ãµes}
+\hypertarget{_p-_produtos_8c_a8d4c684ef725bb1171edbcee9609493f}{\index{P-\/\-Produtos.\-c@{P-\/\-Produtos.\-c}!cadastrar\-\_\-produto@{cadastrar\-\_\-produto}}
+\index{cadastrar\-\_\-produto@{cadastrar\-\_\-produto}!P-Produtos.c@{P-\/\-Produtos.\-c}}
+\subsubsection[{cadastrar\-\_\-produto}]{\setlength{\rightskip}{0pt plus 5cm}int cadastrar\-\_\-produto (
+\begin{DoxyParamCaption}
+\item[{Produto $\ast$}]{produto}
+\end{DoxyParamCaption}
+)}}\label{_p-_produtos_8c_a8d4c684ef725bb1171edbcee9609493f}
+Função responsável por cadastrar novos produtos. Recebe como parâmetro o endereço de uma struct previamente declarada (em P-\/\-Produtos.\-h) e retorna o resultado da operação (Resultados definidos em Codigos.\-h). Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
+
+Testa a abertura do arquivo;
+
+Enquanto não for o fim do arquivo, continua a busca;
+
+Se o caracter lido for 0 (zero), significa que o espaço não está sendo utilizado e seu conteúdo será sobreescrito;
+
+Funções para a escrita no arquivo;
+
+Se o caracter lido for 1 (um), significa que o espaço está sendo utilizado; Passa-\/se para o próximo bloco;
+
+Se chegou ao fim do arquivo sem encontrar espaços vazios, escreve um novo bloco; \hypertarget{_p-_produtos_8c_a4b51286e8a211d5b7a7d7428ba015e9c}{\index{P-\/\-Produtos.\-c@{P-\/\-Produtos.\-c}!editar\-\_\-produto@{editar\-\_\-produto}}
+\index{editar\-\_\-produto@{editar\-\_\-produto}!P-Produtos.c@{P-\/\-Produtos.\-c}}
+\subsubsection[{editar\-\_\-produto}]{\setlength{\rightskip}{0pt plus 5cm}int editar\-\_\-produto (
+\begin{DoxyParamCaption}
+\item[{Produto $\ast$}]{produto}
+\end{DoxyParamCaption}
+)}}\label{_p-_produtos_8c_a4b51286e8a211d5b7a7d7428ba015e9c}
+Função responsável por editar os dados de um produto previamente cadastrado. Recebe como parâmetro o endereço de uma struct previamente declarada (em P-\/\-Produtos.\-h) contendo os dados a serem modificados e retorna o resultado da operação (Resultados definidos em Codigos.\-h). Variável a ser utilizada para percorrer o arquivo (como um multiplicador para a função fseek);
+
+Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
+
+Testa a abertura do arquivo;
+
+Avança para a posição do registro em que se encontra o código;
+
+Se a comparação entre os dois códigos for positiva o condicional será iniciado;
+
+Se a comparação entre os dois códigos for negativa, avança-\/se para o próximo registro e incrementa-\/se o supracitado multiplicador; \hypertarget{_p-_produtos_8c_a6105ae879fa0ab8aa3d91902d0647466}{\index{P-\/\-Produtos.\-c@{P-\/\-Produtos.\-c}!pesquisar\-\_\-produto@{pesquisar\-\_\-produto}}
+\index{pesquisar\-\_\-produto@{pesquisar\-\_\-produto}!P-Produtos.c@{P-\/\-Produtos.\-c}}
+\subsubsection[{pesquisar\-\_\-produto}]{\setlength{\rightskip}{0pt plus 5cm}int pesquisar\-\_\-produto (
+\begin{DoxyParamCaption}
+\item[{Produto $\ast$}]{produto}
+\end{DoxyParamCaption}
+)}}\label{_p-_produtos_8c_a6105ae879fa0ab8aa3d91902d0647466}
+Função responsável por pesquisar por dados de produtos. Recebe como parâmetro o endereço de uma struct previamente declarada (em P-\/\-Produtos.\-h) e retorna o resultado da operação (Resultados definidos em Codigos.\-h). Variável a ser utilizada para percorrer o arquivo (como um multiplicador para a função fseek);
+
+Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
+
+Testa a abertura do arquivo;
+
+Avança para a posição do registro em que se encontra o código;
+
+Se a comparação entre os dois códigos for positiva o condicional será iniciado;
+
+Se a comparação entre os dois códigos for negativa, avança-\/se para o próximo registro e incrementa-\/se o supracitado multiplicador; \hypertarget{_p-_produtos_8c_aadfe1b600cdbbdc5dd5ba9d4cd5a3b3f}{\index{P-\/\-Produtos.\-c@{P-\/\-Produtos.\-c}!remover\-\_\-produto@{remover\-\_\-produto}}
+\index{remover\-\_\-produto@{remover\-\_\-produto}!P-Produtos.c@{P-\/\-Produtos.\-c}}
+\subsubsection[{remover\-\_\-produto}]{\setlength{\rightskip}{0pt plus 5cm}int remover\-\_\-produto (
+\begin{DoxyParamCaption}
+\item[{int}]{codigo}
+\end{DoxyParamCaption}
+)}}\label{_p-_produtos_8c_aadfe1b600cdbbdc5dd5ba9d4cd5a3b3f}
+Função responsável por remover produtos do banco de dados. Recebe como parâmetro o codigo do produto e retorna o resultado da operação (Resultados definidos em Codigos.\-h). Variável a ser utilizada para percorrer o arquivo (como um multiplicador para a função fseek);
+
+Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
+
+Testa a abertura do arquivo;
+
+Avança para a posição do registro em que se encontra o código;
+
+Se a comparação entre os dois códigos for positiva o condicional será iniciado;
+
+Se a comparação entre os dois códigos for negativa, avança-\/se para o próximo registro e incrementa-\/se o supracitado multiplicador; 

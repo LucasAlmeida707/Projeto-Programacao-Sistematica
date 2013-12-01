@@ -1,0 +1,101 @@
+\hypertarget{_p-_defeitos_8c}{\section{ReferÃªncia do Arquivo Projeto-\/\-Programacao-\/\-Sistematica.git/trunk/\-Arquivos C/\-P-\/\-Defeitos.c}
+\label{_p-_defeitos_8c}\index{Projeto-\/\-Programacao-\/\-Sistematica.\-git/trunk/\-Arquivos C/\-P-\/\-Defeitos.\-c@{Projeto-\/\-Programacao-\/\-Sistematica.\-git/trunk/\-Arquivos C/\-P-\/\-Defeitos.\-c}}
+}
+{\ttfamily \#include \char`\"{}P-\/\-Defeitos.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Codigos.\-h\char`\"{}}\\*
+\subsection*{DefiniÃ§Ãµes e Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_p-_defeitos_8c_af87bb436ecf161a9f926b55ae92621e1}{P\-\_\-\-D\-E\-F\-E\-I\-T\-O\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R}
+\end{DoxyCompactItemize}
+\subsection*{FunÃ§Ãµes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_p-_defeitos_8c_abd66a20b81d8992d6cacfbeb57e6a015}{cadastrar\-\_\-defeito} (Defeito $\ast$defeito)
+\item 
+int \hyperlink{_p-_defeitos_8c_a4fea96cb5bfaf70008541c3425031435}{remover\-\_\-defeito} (int codigo)
+\item 
+int \hyperlink{_p-_defeitos_8c_a7529a783bbb190e8168326642323008e}{editar\-\_\-defeito} (Defeito $\ast$defeito)
+\item 
+int \hyperlink{_p-_defeitos_8c_a3ecfb1bf9bccc17015246648d65217f8}{pesquisar\-\_\-defeito} (Defeito $\ast$defeito)
+\end{DoxyCompactItemize}
+
+
+\subsection{DefiniÃ§Ãµes e macros}
+\hypertarget{_p-_defeitos_8c_af87bb436ecf161a9f926b55ae92621e1}{\index{P-\/\-Defeitos.\-c@{P-\/\-Defeitos.\-c}!P\-\_\-\-D\-E\-F\-E\-I\-T\-O\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R@{P\-\_\-\-D\-E\-F\-E\-I\-T\-O\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R}}
+\index{P\-\_\-\-D\-E\-F\-E\-I\-T\-O\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R@{P\-\_\-\-D\-E\-F\-E\-I\-T\-O\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R}!P-Defeitos.c@{P-\/\-Defeitos.\-c}}
+\subsubsection[{P\-\_\-\-D\-E\-F\-E\-I\-T\-O\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-\_\-\-D\-E\-F\-E\-I\-T\-O\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R}}\label{_p-_defeitos_8c_af87bb436ecf161a9f926b55ae92621e1}
+
+
+\subsection{FunÃ§Ãµes}
+\hypertarget{_p-_defeitos_8c_abd66a20b81d8992d6cacfbeb57e6a015}{\index{P-\/\-Defeitos.\-c@{P-\/\-Defeitos.\-c}!cadastrar\-\_\-defeito@{cadastrar\-\_\-defeito}}
+\index{cadastrar\-\_\-defeito@{cadastrar\-\_\-defeito}!P-Defeitos.c@{P-\/\-Defeitos.\-c}}
+\subsubsection[{cadastrar\-\_\-defeito}]{\setlength{\rightskip}{0pt plus 5cm}int cadastrar\-\_\-defeito (
+\begin{DoxyParamCaption}
+\item[{Defeito $\ast$}]{defeito}
+\end{DoxyParamCaption}
+)}}\label{_p-_defeitos_8c_abd66a20b81d8992d6cacfbeb57e6a015}
+Função responsável por cadastrar novos defeitos. Recebe como parâmetro o endereço de uma struct previamente declarada (em P-\/\-Defeitos.\-h) e retorna o resultado da operação (Resultados definidos em Codigos.\-h). Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
+
+Testa a abertura do arquivo;
+
+Enquanto não for o fim do arquivo, continua a busca;
+
+Se o caracter lido for 0 (zero), significa que o espaço não está sendo utilizado e seu conteúdo será sobreescrito;
+
+Funções para a escrita no arquivo;
+
+Se o caracter lido for 1 (um), significa que o espaço está sendo utilizado; Passa-\/se para o próximo bloco;
+
+Se chegou ao fim do arquivo sem encontrar espaços vazios, escreve um novo bloco; \hypertarget{_p-_defeitos_8c_a7529a783bbb190e8168326642323008e}{\index{P-\/\-Defeitos.\-c@{P-\/\-Defeitos.\-c}!editar\-\_\-defeito@{editar\-\_\-defeito}}
+\index{editar\-\_\-defeito@{editar\-\_\-defeito}!P-Defeitos.c@{P-\/\-Defeitos.\-c}}
+\subsubsection[{editar\-\_\-defeito}]{\setlength{\rightskip}{0pt plus 5cm}int editar\-\_\-defeito (
+\begin{DoxyParamCaption}
+\item[{Defeito $\ast$}]{defeito}
+\end{DoxyParamCaption}
+)}}\label{_p-_defeitos_8c_a7529a783bbb190e8168326642323008e}
+Função responsável por editar os dados de um defeito previamente cadastrado. Recebe como parâmetro o endereço de uma struct previamente declarada (em P-\/\-Defeitos.\-h) contendo os dados a serem modificados e retorna o resultado da operação (Resultados definidos em Codigos.\-h). Variável a ser utilizada para percorrer o arquivo (como um multiplicador para a função fseek);
+
+Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
+
+Testa a abertura do arquivo;
+
+Avança para a posição do registro em que se encontra o código;
+
+Se a comparação entre os dois códigos for positiva o condicional será iniciado;
+
+Se a comparação entre os dois códigos for negativa, avança-\/se para o próximo registro e incrementa-\/se o supracitado multiplicador; \hypertarget{_p-_defeitos_8c_a3ecfb1bf9bccc17015246648d65217f8}{\index{P-\/\-Defeitos.\-c@{P-\/\-Defeitos.\-c}!pesquisar\-\_\-defeito@{pesquisar\-\_\-defeito}}
+\index{pesquisar\-\_\-defeito@{pesquisar\-\_\-defeito}!P-Defeitos.c@{P-\/\-Defeitos.\-c}}
+\subsubsection[{pesquisar\-\_\-defeito}]{\setlength{\rightskip}{0pt plus 5cm}int pesquisar\-\_\-defeito (
+\begin{DoxyParamCaption}
+\item[{Defeito $\ast$}]{defeito}
+\end{DoxyParamCaption}
+)}}\label{_p-_defeitos_8c_a3ecfb1bf9bccc17015246648d65217f8}
+Função responsável por pesquisar por dados de defeitos. Recebe como parâmetro o endereço de uma struct previamente declarada (em P-\/\-Defeitos.\-h) e retorna o resultado da operação (Resultados definidos em Codigos.\-h). Variável a ser utilizada para percorrer o arquivo (como um multiplicador para a função fseek);
+
+Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
+
+Testa a abertura do arquivo;
+
+Avança para a posição do registro em que se encontra o código;
+
+Se a comparação entre os dois códigos for positiva o condicional será iniciado;
+
+Se a comparação entre os dois códigos for negativa, avança-\/se para o próximo registro e incrementa-\/se o supracitado multiplicador; \hypertarget{_p-_defeitos_8c_a4fea96cb5bfaf70008541c3425031435}{\index{P-\/\-Defeitos.\-c@{P-\/\-Defeitos.\-c}!remover\-\_\-defeito@{remover\-\_\-defeito}}
+\index{remover\-\_\-defeito@{remover\-\_\-defeito}!P-Defeitos.c@{P-\/\-Defeitos.\-c}}
+\subsubsection[{remover\-\_\-defeito}]{\setlength{\rightskip}{0pt plus 5cm}int remover\-\_\-defeito (
+\begin{DoxyParamCaption}
+\item[{int}]{codigo}
+\end{DoxyParamCaption}
+)}}\label{_p-_defeitos_8c_a4fea96cb5bfaf70008541c3425031435}
+Função responsável por remover defeitos do banco de dados. Recebe como parâmetro o código do defeito e retorna o resultado da operação (Resultados definidos em Codigos.\-h). Variável a ser utilizada para percorrer o arquivo (como um multiplicador para a função fseek);
+
+Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
+
+Testa a abertura do arquivo;
+
+Avança para a posição do registro em que se encontra o código;
+
+Se a comparação entre os dois códigos for positiva o condicional será iniciado;
+
+Se a comparação entre os dois códigos for negativa, avança-\/se para o próximo registro e incrementa-\/se o supracitado multiplicador; 

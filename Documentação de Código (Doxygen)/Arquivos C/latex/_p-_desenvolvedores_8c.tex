@@ -1,0 +1,103 @@
+\hypertarget{_p-_desenvolvedores_8c}{\section{ReferÃªncia do Arquivo Projeto-\/\-Programacao-\/\-Sistematica.git/trunk/\-Arquivos C/\-P-\/\-Desenvolvedores.c}
+\label{_p-_desenvolvedores_8c}\index{Projeto-\/\-Programacao-\/\-Sistematica.\-git/trunk/\-Arquivos C/\-P-\/\-Desenvolvedores.\-c@{Projeto-\/\-Programacao-\/\-Sistematica.\-git/trunk/\-Arquivos C/\-P-\/\-Desenvolvedores.\-c}}
+}
+{\ttfamily \#include \char`\"{}P-\/\-Desenvolvedores.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Codigos.\-h\char`\"{}}\\*
+\subsection*{DefiniÃ§Ãµes e Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_p-_desenvolvedores_8c_aa51c6cf732bed79ce1c4e2a387eccfe1}{P\-\_\-\-D\-E\-S\-E\-N\-V\-O\-L\-V\-E\-D\-O\-R\-E\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R}
+\end{DoxyCompactItemize}
+\subsection*{FunÃ§Ãµes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_p-_desenvolvedores_8c_ac7c5aec8256406fb11e7cfd8a0853965}{cadastrar\-\_\-desenvolvedor} (Desenvolvedor $\ast$desenvolvedor)
+\item 
+int \hyperlink{_p-_desenvolvedores_8c_af25b927af8ddc87656a58c18e9e9d9cc}{remover\-\_\-desenvolvedor} (char $\ast$email)
+\item 
+int \hyperlink{_p-_desenvolvedores_8c_a5ed643388f92d5bed81e7e3cdd6ac48d}{editar\-\_\-desenvolvedor} (Desenvolvedor $\ast$desenvolvedor)
+\item 
+int \hyperlink{_p-_desenvolvedores_8c_a1cc3dd3ad3cb04f636ef582ed65bb768}{pesquisar\-\_\-desenvolvedor} (Desenvolvedor $\ast$desenvolvedor)
+\end{DoxyCompactItemize}
+
+
+\subsection{DefiniÃ§Ãµes e macros}
+\hypertarget{_p-_desenvolvedores_8c_aa51c6cf732bed79ce1c4e2a387eccfe1}{\index{P-\/\-Desenvolvedores.\-c@{P-\/\-Desenvolvedores.\-c}!P\-\_\-\-D\-E\-S\-E\-N\-V\-O\-L\-V\-E\-D\-O\-R\-E\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R@{P\-\_\-\-D\-E\-S\-E\-N\-V\-O\-L\-V\-E\-D\-O\-R\-E\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R}}
+\index{P\-\_\-\-D\-E\-S\-E\-N\-V\-O\-L\-V\-E\-D\-O\-R\-E\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R@{P\-\_\-\-D\-E\-S\-E\-N\-V\-O\-L\-V\-E\-D\-O\-R\-E\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R}!P-Desenvolvedores.c@{P-\/\-Desenvolvedores.\-c}}
+\subsubsection[{P\-\_\-\-D\-E\-S\-E\-N\-V\-O\-L\-V\-E\-D\-O\-R\-E\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-\_\-\-D\-E\-S\-E\-N\-V\-O\-L\-V\-E\-D\-O\-R\-E\-S\-\_\-\-S\-E\-R\-V\-I\-D\-O\-R}}\label{_p-_desenvolvedores_8c_aa51c6cf732bed79ce1c4e2a387eccfe1}
+
+
+\subsection{FunÃ§Ãµes}
+\hypertarget{_p-_desenvolvedores_8c_ac7c5aec8256406fb11e7cfd8a0853965}{\index{P-\/\-Desenvolvedores.\-c@{P-\/\-Desenvolvedores.\-c}!cadastrar\-\_\-desenvolvedor@{cadastrar\-\_\-desenvolvedor}}
+\index{cadastrar\-\_\-desenvolvedor@{cadastrar\-\_\-desenvolvedor}!P-Desenvolvedores.c@{P-\/\-Desenvolvedores.\-c}}
+\subsubsection[{cadastrar\-\_\-desenvolvedor}]{\setlength{\rightskip}{0pt plus 5cm}int cadastrar\-\_\-desenvolvedor (
+\begin{DoxyParamCaption}
+\item[{Desenvolvedor $\ast$}]{desenvolvedor}
+\end{DoxyParamCaption}
+)}}\label{_p-_desenvolvedores_8c_ac7c5aec8256406fb11e7cfd8a0853965}
+Função responsável por cadastrar novos desenvolvedores. Recebe como parâmetro o endereço de uma struct previamente declarada (em P-\/\-Desenvolvedores.\-h) e retorna o resultado da operação (Resultados definidos em Codigos.\-h). Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
+
+Testa a abertura do arquivo;
+
+Completando as strings com espaços vazios até o seu tamanho máximo;
+
+Enquanto não for o fim do arquivo, continua a busca;
+
+Se o caracter lido for 0 (zero), significa que o espaço não está sendo utilizado e seu conteúdo será sobreescrito;
+
+Funções para a escrita no arquivo;
+
+Se o caracter lido for 1 (um), significa que o espaço está sendo utilizado; Passa-\/se para o próximo bloco;
+
+Se chegou ao fim do arquivo sem encontrar espaços vazios, escreve um novo bloco; \hypertarget{_p-_desenvolvedores_8c_a5ed643388f92d5bed81e7e3cdd6ac48d}{\index{P-\/\-Desenvolvedores.\-c@{P-\/\-Desenvolvedores.\-c}!editar\-\_\-desenvolvedor@{editar\-\_\-desenvolvedor}}
+\index{editar\-\_\-desenvolvedor@{editar\-\_\-desenvolvedor}!P-Desenvolvedores.c@{P-\/\-Desenvolvedores.\-c}}
+\subsubsection[{editar\-\_\-desenvolvedor}]{\setlength{\rightskip}{0pt plus 5cm}int editar\-\_\-desenvolvedor (
+\begin{DoxyParamCaption}
+\item[{Desenvolvedor $\ast$}]{desenvolvedor}
+\end{DoxyParamCaption}
+)}}\label{_p-_desenvolvedores_8c_a5ed643388f92d5bed81e7e3cdd6ac48d}
+Função responsável por editar os dados de um desenvolvedor previamente cadastrado. Recebe como parâmetro o endereço de uma struct previamente declarada (em P-\/\-Desenvolvedores.\-h) contendo os dados a serem modificados e retorna o resultado da operação (Resultados definidos em Codigos.\-h). Variável a ser utilizada para percorrer o arquivo (como um multiplicador para a função fseek);
+
+Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
+
+Testa a abertura do arquivo;
+
+Avança para a posição do registro em que se encontra o email;
+
+Se a comparação entre as duas strings for positiva (retorno 0) o condicional será iniciado;
+
+Se a comparação entre as duas strings for negativa, avança-\/se para o próximo registro e incrementa-\/se o supracitado multiplicador; \hypertarget{_p-_desenvolvedores_8c_a1cc3dd3ad3cb04f636ef582ed65bb768}{\index{P-\/\-Desenvolvedores.\-c@{P-\/\-Desenvolvedores.\-c}!pesquisar\-\_\-desenvolvedor@{pesquisar\-\_\-desenvolvedor}}
+\index{pesquisar\-\_\-desenvolvedor@{pesquisar\-\_\-desenvolvedor}!P-Desenvolvedores.c@{P-\/\-Desenvolvedores.\-c}}
+\subsubsection[{pesquisar\-\_\-desenvolvedor}]{\setlength{\rightskip}{0pt plus 5cm}int pesquisar\-\_\-desenvolvedor (
+\begin{DoxyParamCaption}
+\item[{Desenvolvedor $\ast$}]{desenvolvedor}
+\end{DoxyParamCaption}
+)}}\label{_p-_desenvolvedores_8c_a1cc3dd3ad3cb04f636ef582ed65bb768}
+Função responsável por pesquisar por dados de desenvolvedores. Recebe como parâmetro o endereço de uma struct previamente declarada (em P-\/\-Desenvolvedores.\-h) e retorna o resultado da operação (Resultados definidos em Codigos.\-h). Variável a ser utilizada para percorrer o arquivo (como um multiplicador para a função fseek);
+
+Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
+
+Testa a abertura do arquivo;
+
+Avança para a posição do registro em que se encontra o email;
+
+Se a comparação entre as duas strings for positiva (retorno 0) o condicional será iniciado;
+
+Se a comparação entre as duas strings for negativa, avança-\/se para o próximo registro e incrementa-\/se o supracitado multiplicador; \hypertarget{_p-_desenvolvedores_8c_af25b927af8ddc87656a58c18e9e9d9cc}{\index{P-\/\-Desenvolvedores.\-c@{P-\/\-Desenvolvedores.\-c}!remover\-\_\-desenvolvedor@{remover\-\_\-desenvolvedor}}
+\index{remover\-\_\-desenvolvedor@{remover\-\_\-desenvolvedor}!P-Desenvolvedores.c@{P-\/\-Desenvolvedores.\-c}}
+\subsubsection[{remover\-\_\-desenvolvedor}]{\setlength{\rightskip}{0pt plus 5cm}int remover\-\_\-desenvolvedor (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{email}
+\end{DoxyParamCaption}
+)}}\label{_p-_desenvolvedores_8c_af25b927af8ddc87656a58c18e9e9d9cc}
+Função responsável por remover desenvolvedores do banco de dados. Recebe como parâmetro o email do desenvolvedor e retorna o resultado da operação (Resultados definidos em Codigos.\-h). Variável a ser utilizada para percorrer o arquivo (como um multiplicador para a função fseek);
+
+Abertura do arquivo de forma a ser possível a leitura e escrita em um arquivo existente;
+
+Testa a abertura do arquivo;
+
+Avança para a posição do registro em que se encontra o email;
+
+Se a comparação entre as duas strings for positiva (retorno 0) o condicional será iniciado;
+
+Se a comparação entre as duas strings for negativa, avança-\/se para o próximo registro e incrementa-\/se o supracitado multiplicador; 

@@ -1,0 +1,4 @@
+Pasta contendo os seguintes artefatos:
+
+- Documentação de Código (Doxygen) - Documentação Doxygen dos módulos;
+- Planejamento do projeto;
